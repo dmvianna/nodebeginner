@@ -6,7 +6,7 @@ const requestHandlers = require('./requestHandlers')
 
 const handle = {
   '/': requestHandlers.start,
-  '/start/': requestHandlers.start,
+  '/start': requestHandlers.start,
   '/upload': requestHandlers.upload
 }
 
