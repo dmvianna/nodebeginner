@@ -1,8 +1,8 @@
 'use strict'
 
-const exec = require('child_process').exec
+const querystring = require('querystring')
 
-const start = (response) => {
+const start = (response, postData) => {
   console.log('request handler \'start\' was called')
   const body = '<html>' +
           '<head>' +
@@ -22,10 +22,11 @@ const start = (response) => {
   response.end()
 }
 
-const upload = (response) => {
+const upload = (response, postData) => {
   console.log('request handler \'upload\' was called')
   response.writeHead(200, { 'Content-Type': 'text-plain' })
-  response.write('Hello upload')
+  response.write('You\'ve sent: ' +
+                 querystring.parse(postData).text)
   response.end()
 }
 
