@@ -1,0 +1,30 @@
+{
+  "name": "nodebeginner",
+  "version": "1.0.0",
+  "description": "www.nodebeginner.org exercises",
+  "main": "index.js",
+  "dependencies": {
+    "formidable": "^1.0.17"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmvianna/nodebeginner.git"
+  },
+  "keywords": [
+    "exercise",
+    "javascript",
+    "node",
+    "es6"
+  ],
+  "author": "Daniel Vianna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmvianna/nodebeginner/issues"
+  },
+  "homepage": "https://github.com/dmvianna/nodebeginner#readme"
+}
