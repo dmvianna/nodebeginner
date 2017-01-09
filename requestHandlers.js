@@ -1,6 +1,7 @@
 'use strict'
 
-const querystring = require('querystring')
+const os = require('os')
+os.tmpDir = os.tmpdir
 const fs = require('fs')
 const formidable = require('formidable')
 
@@ -35,20 +36,15 @@ const upload = (response, request) => {
       console.log('error parsing')
     } else {
       console.log('parsing done')
-
-      fs.rename(files.upload.path, 'tmp/test.png', (error) => {
-        if (error) {
-          fs.unlink('tmp/test.png')
-          fs.rename(files.upload.path, '/tmp/test.png')
-        }
-      })
-
-      response.writeHead(200, { 'Content-Type': 'text/html' })
-      response.write('received image:<br/>')
-      response.write('<img src=\'/show\' />')
-      response.end()
     }
   })
+  form.on('fileBegin', (name, file) => { file.path = 'tmp/test.png' })
+  form.on('file', (name, file) => console.log('uploaded test.png'))
+  console.log('writing file to response now')
+  response.writeHead(200, { 'Content-Type': 'text/html' })
+  response.write('received image:<br/>')
+  response.write('<img src=\'/show\' />')
+  response.end()
 }
 
 const show = (response) => {
