@@ -22,7 +22,7 @@
     "es6"
   ],
   "author": "Daniel Vianna",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/dmvianna/nodebeginner/issues"
   },
